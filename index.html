@@ -3,31 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR cu model-viewer</title>
+    <title>AR Test</title>
     
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     
     <style>
-        model-viewer {
+        .ar-container {
+            position: relative;
             width: 100%;
             height: 90vh;
             margin: 0 auto;
         }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+        
+        model-viewer::part(ar-button) {
+            display: none;
+        }
+
+        #custom-ar-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            background-color: #ffffff;
+            color: #1a73e8;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid #dadce0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            
+            cursor: pointer;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        #custom-ar-button:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        #custom-ar-button img {
+            width: 24px;
+            height: 24px;
+        }
+
     </style>
 </head>
 <body>
 
     <h1>Exemplu Obiect</h1>
 
-    <model-viewer 
-        src="model.glb"
-        ios-src="model.usdz"
-        alt="Exemplu model 3D"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        auto-rotate>
-    </model-viewer>
+    <div class="ar-container">
+        <model-viewer 
+            id="ar-viewer"
+            src="model.glb"
+            ios-src="model.usdz"
+            alt="Exemplu model 3D"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            camera-controls
+            auto-rotate>
+        </model-viewer>
+
+        <button id="custom-ar-button">
+            <img src="Images/ar.png" alt="AR Icon">
+            <span>Vezi prin camera</span>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const modelViewer = document.querySelector('#ar-viewer');
+            const arButton = document.querySelector('#custom-ar-button');
+
+            arButton.addEventListener('click', () => {
+                modelViewer.activateAR();
+            });
+        });
+    </script>
 
 </body>
 </html>
