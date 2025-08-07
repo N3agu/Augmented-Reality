@@ -5,53 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3Dine - Meniu Digital AR</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="3Dine Icon" class="logo-image">
+                <img src="images/logo-nobuffer.png" alt="3Dine Icon" class="logo-image">
                 <span class="logo-text">3Dine</span>
             </a>
-            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+            <!-- Desktop Navigation Links -->
+            <div class="nav-links">
+                <a href="index.html#menu">Meniu</a>
+                <a href="#">Oferte</a>
+                <a href="cart.html" class="cart-button">Comanda 🛒<span id="cart-count">0</span></a>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button id="hamburger-btn" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu">
+        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
+        <a href="index.html#menu">Meniu</a>
+        <a href="#">Oferte</a>
+        <a href="cart.html">Comanda</a>
+    </div>
+
     <main class="container">
         <section class="hero">
-            <h1>Meniul Prinde Viață</h1>
-            <p>Vizualizează preparatele tale în 3D și Realitate Augmentată!</p>
+            <div class="hero-text">
+                <h1>Gust Pur, Exotic</h1>
+                <p>Experimentează o călătorie culinară unică. Fiecare preparat este o operă de artă, gata să fie descoperită în 3D direct la masa ta.</p>
+                <a href="#menu" class="cta-button">Explorează Meniul</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/main.png" alt="Preparat principal">
+            </div>
         </section>
 
-        <section id="product-grid" class="product-grid">
-            <div class="product-card">
-                <a href="product.html?id=1">
+        <div class="divider">
+             <svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q50,10 100,5" stroke="var(--primary-color)" fill="none" stroke-width="2px"/></svg>
+        </div>
+
+        <section id="menu" class="menu-section">
+            <h2>Preparatele noastre <span>exclusive</span></h2>
+            <div class="product-grid">
+                <a href="product.html?id=1" class="product-card">
                     <img src="images/produs1.jpg" alt="Burger">
                     <div class="product-info">
                         <h3>Burger "Epicurean"</h3>
-                        <p>Vezi detalii & AR</p>
+                        <p class="price">58.00 RON</p>
+                        <span class="details-link">Vezi detalii & AR →</span>
                     </div>
                 </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product.html?id=2">
+                <a href="product.html?id=2" class="product-card">
                     <img src="images/produs2.jpg" alt="Pizza">
                     <div class="product-info">
                         <h3>Pizza "Regina"</h3>
-                        <p>Vezi detalii & AR</p>
+                        <p class="price">65.50 RON</p>
+                        <span class="details-link">Vezi detalii & AR →</span>
                     </div>
                 </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product.html?id=3">
+                <a href="product.html?id=3" class="product-card">
                     <img src="images/produs3.jpg" alt="Desert">
                     <div class="product-info">
                         <h3>Lava Cake "Decadent"</h3>
-                        <p>Vezi detalii & AR</p>
+                        <p class="price">35.00 RON</p>
+                        <span class="details-link">Vezi detalii & AR →</span>
                     </div>
                 </a>
             </div>
@@ -59,7 +88,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 3Dine. Meniu digital interactiv.</p>
+        <p>&copy; 2025 3Dine Restaurant. Design inspirat de excelență.</p>
     </footer>
 
     <script src="script.js"></script>

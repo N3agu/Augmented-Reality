@@ -13,16 +13,35 @@
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="3Dine Icon" class="logo-image">
+                <img src="images/logo-nobuffer.png" alt="3Dine Icon" class="logo-image">
                 <span class="logo-text">3Dine</span>
             </a>
-            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+            <!-- Desktop Navigation Links -->
+            <div class="nav-links">
+                <a href="index.html#menu">Meniu</a>
+                <a href="#">Oferte</a>
+                <a href="cart.html" class="cart-button">Comanda 🛒<span id="cart-count">0</span></a>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button id="hamburger-btn" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu">
+        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
+        <a href="index.html#menu">Meniu</a>
+        <a href="#">Oferte</a>
+        <a href="cart.html">Comanda</a>
+    </div>
+
     <main class="container product-page-container">
         <div id="product-details">
-            </div>
+        </div>
     </main>
 
     <footer>

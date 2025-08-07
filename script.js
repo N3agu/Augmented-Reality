@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.getElementById('cart-items-container')) {
             loadCartItems();
         }
+        
+        initHamburgerMenu();
     };
     
     const getCart = () => JSON.parse(localStorage.getItem('cart')) || [];
@@ -75,19 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const productDetailsContainer = document.getElementById('product-details');
         productDetailsContainer.innerHTML = `
-            <div class="product-view">
-                <div class="model-container">
-                    <model-viewer src="${dish.model}" poster="${dish.poster}" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" alt="Model 3D al ${dish.name}" shadow-intensity="1">
-                        <button slot="ar-button" class="ar-button">
-                            Vezi în spațiul tău (AR)
-                        </button>
-                    </model-viewer>
-                </div>
+            <div class="model-viewer-container">
+                <model-viewer src="${dish.model}" poster="${dish.poster}" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" alt="Model 3D al ${dish.name}" shadow-intensity="1">
+                    <button slot="ar-button" class="cta-button">
+                        Vezi în spațiul tău (AR)
+                    </button>
+                </model-viewer>
+            </div>
+            <div class="product-info-layout">
                 <div class="product-specs">
                     <h1>${dish.name}</h1>
                     <p class="price">${dish.price.toFixed(2)} RON</p>
                     <h2>Detalii Preparat</h2>
                     <ul>${specsHtml}</ul>
+                </div>
+                <div class="product-actions">
                     <button class="add-to-cart-btn" data-id="${dishId}">Adaugă în Comandă</button>
                 </div>
             </div>
@@ -150,6 +154,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCartCount();
             }
         });
+    };
+
+    const initHamburgerMenu = () => {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        if (hamburgerBtn && mobileMenu && closeMenuBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('show');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+            
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('show');
+                });
+            });
+        }
     };
     
     initPage();
