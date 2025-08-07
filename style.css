@@ -131,9 +131,13 @@ a.product-card:hover span.details-link { color: var(--primary-color); }
 }
 model-viewer { width: 100%; height: 100%; --poster-color: transparent; border: 1px solid #333; }
 .product-info-layout {
-    display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Default to one column for mobile */
+    gap: 3rem;
     align-items: start;
 }
+
+
 .product-specs h1 { font-family: var(--font-heading); font-size: 3.5rem; color: white; line-height: 1.2; margin-bottom: 1rem; }
 .product-specs .price { font-size: 2rem; color: var(--primary-color); font-weight: bold; margin-bottom: 2rem; }
 .product-specs h2 { font-family: var(--font-heading); font-size: 2rem; color: var(--primary-color); border-bottom: 2px solid #444; padding-bottom: 0.5rem; margin-bottom: 1rem; }
@@ -143,10 +147,8 @@ model-viewer { width: 100%; height: 100%; --poster-color: transparent; border: 1
     font-size: 1.1rem;
 }
 .product-actions {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 1rem;              /* Add space between them */
+    padding-top: 2rem; /* Aligns button with the top of the specs text */
+    margin: 0; /* Reset margin */
 }
 
 /* --- UNIFIED BUTTON STYLES --- */
