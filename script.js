@@ -80,9 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         productDetailsContainer.innerHTML = `
             <div class="model-viewer-container">
                 <model-viewer id="product-viewer" src="${dish.model}" poster="${dish.poster}" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" alt="Model 3D al ${dish.name}" shadow-intensity="1">
-                    <button slot="ar-button" class="cta-button">
-                        Vezi în spațiul tău (AR)
-                    </button>
                 </model-viewer>
             </div>
 
