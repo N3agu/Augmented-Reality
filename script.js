@@ -4,36 +4,36 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Burger "Epicurean"',
             price: 58.00,
             model: 'models/modelProdus1.glb',
+            model_usdz: 'models/modelProdus1.usdz', // Path to Apple's file format
             poster: 'images/preparat1.jpg',
             specs: {
                 'Ingrediente principale': 'Carne de vită Angus, brânză cheddar maturată, ceapă caramelizată, castraveți murați, sos special',
                 'Gramaj': 'Aprox. 450g',
-                'Alergeni': 'Gluten, Lactoză, Muștar',
-                'Recomandarea bucătarului': 'Servit cu cartofi prăjiți cu parmezan și usturoi.'
+                'Alergeni': 'Gluten, Lactoză, Muștar'
             }
         },
         2: {
             name: 'Pizza "Regina"',
             price: 65.50,
             model: 'models/modelProdus2.glb',
+            model_usdz: 'models/modelProdus2.usdz', // Path to Apple's file format
             poster: 'images/preparat2.jpg',
             specs: {
                 'Ingrediente principale': 'Sos de roșii San Marzano, mozzarella fior di latte, prosciutto cotto, ciuperci proaspete, busuioc',
                 'Gramaj': 'Aprox. 550g',
-                'Alergeni': 'Gluten, Lactoză',
-                'Recomandarea bucătarului': 'Un strop de ulei de măsline extra virgin după coacere îi desăvârșește gustul.'
+                'Alergeni': 'Gluten, Lactoză'
             }
         },
         3: {
             name: 'Lava Cake "Decadent"',
             price: 35.00,
             model: 'models/modelProdus3.glb',
+            model_usdz: 'models/modelProdus3.usdz', // Path to Apple's file format
             poster: 'images/preparat3.jpg',
             specs: {
                 'Ingrediente principale': 'Ciocolată neagră belgiană (70%), ouă, unt, zahăr fin',
                 'Gramaj': 'Aprox. 200g',
-                'Alergeni': 'Gluten, Ouă, Lactoză',
-                'Recomandarea bucătarului': 'Se servește cald, alături de o cupă de înghețată de vanilie și fructe de pădure.'
+                'Alergeni': 'Gluten, Ouă, Lactoză'
             }
         }
     };
@@ -76,10 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
             .join('');
 
         const productDetailsContainer = document.getElementById('product-details');
-        // Restoring the two-column grid structure
         productDetailsContainer.innerHTML = `
             <div class="model-viewer-container">
-                <model-viewer id="product-viewer" src="${dish.model}" poster="${dish.poster}" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" alt="Model 3D al ${dish.name}" shadow-intensity="1">
+                <model-viewer 
+                    id="product-viewer" 
+                    src="${dish.model}" 
+                    ios-src="${dish.model_usdz}" 
+                    poster="${dish.poster}" 
+                    ar ar-modes="webxr scene-viewer quick-look" 
+                    camera-controls 
+                    touch-action="pan-y" 
+                    alt="Model 3D al ${dish.name}" 
+                    shadow-intensity="1">
                 </model-viewer>
             </div>
 
@@ -96,9 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // --- Event listener logic ---
         document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
-            const id = e.target.getAttribute('id');
+            const id = e.target.getAttribute('data-id');
             addToCart(id);
         });
     };
