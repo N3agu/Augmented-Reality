@@ -142,7 +142,12 @@ model-viewer { width: 100%; height: 100%; --poster-color: transparent; border: 1
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
-.product-actions { padding-top: 2rem; }
+.product-actions {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 1rem;              /* Add space between them */
+}
 
 /* --- UNIFIED BUTTON STYLES --- */
 .cta-button, .add-to-cart-btn, #clear-cart-btn {

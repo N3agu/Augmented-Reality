@@ -76,12 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .join('');
 
         const productDetailsContainer = document.getElementById('product-details');
+        // The <button> is no longer inside <model-viewer>
         productDetailsContainer.innerHTML = `
             <div class="model-viewer-container">
-                <model-viewer src="${dish.model}" poster="${dish.poster}" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" alt="Model 3D al ${dish.name}" shadow-intensity="1">
-                    <button slot="ar-button" class="cta-button">
-                        Vezi în spațiul tău (AR)
-                    </button>
+                <model-viewer id="product-viewer" src="${dish.model}" poster="${dish.poster}" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" alt="Model 3D al ${dish.name}" shadow-intensity="1">
                 </model-viewer>
             </div>
             <div class="product-info-layout">
@@ -92,15 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul>${specsHtml}</ul>
                 </div>
                 <div class="product-actions">
+                    <button id="launch-ar-btn" class="cta-button">Vezi în spațiul tău (AR)</button>
                     <button class="add-to-cart-btn" data-id="${dishId}">Adaugă în Comandă</button>
                 </div>
             </div>
         `;
-        
+
+        // --- Event listener logic ---
+        // Add to Cart button
         document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
             const id = e.target.getAttribute('data-id');
             addToCart(id);
         });
+
+        // New listener for the external AR button
+        const launchArBtn = document.getElementById('launch-ar-btn');
+        const modelViewer = document.getElementById('product-viewer');
+        if(launchArBtn && modelViewer) {
+            launchArBtn.addEventListener('click', () => {
+                modelViewer.activateAR();
+            });
+        }
     };
 
     const addToCart = (dishId) => {
