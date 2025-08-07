@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Event listener logic ---
         document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
-            const id = e.target.getAttribute('id');
+            const id = e.target.getAttribute('data-id');
             addToCart(id);
         });
     };
