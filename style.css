@@ -61,6 +61,14 @@ nav {
 .cart-button:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(249, 168, 38, 0.3); }
 #cart-count { margin-left: 8px; }
 
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 8px;
+    font-weight: normal;
+}
+
+
 /* --- HAMBURGER MENU --- */
 #hamburger-btn {
     display: none; background: none; border: none; cursor: pointer;

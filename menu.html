@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meniu - 3Dine</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="images/logo-nobuffer.png" alt="3Dine Icon" class="logo-image">
+            <span class="logo-text">3Dine</span>
+        </a>
+        <div class="nav-links">
+            <a href="menu.html" class="active">Meniu</a>
+            <a href="index.html#oferte">Oferte</a>
+            <a href="cart.html" class="cart-button">Comanda 🛒<span id="cart-count">0</span></a>
+        </div>
+        <button id="hamburger-btn" aria-label="Open Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<div id="mobile-menu">
+    <button id="close-menu-btn">&times;</button>
+    <a href="menu.html">Meniu</a>
+    <a href="index.html#oferte">Oferte</a>
+    <a href="cart.html">Comanda</a>
+</div>
+
+<main class="container">
+
+    <section class="menu-section">
+        <h2>Fast-<span>Food</span></h2>
+        <div class="product-grid">
+            <!-- Example item -->
+            <a href="product.html?id=1" class="product-card">
+                <img src="images/hamburger.jpg" alt="Burger">
+                <div class="product-info">
+                    <h3>Burger "Epicurean"</h3>
+                    <p class="price">65.00 RON</p>
+                    <span class="details-link">Vezi detalii & AR →</span>
+                </div>
+            </a>
+            <a href="product.html?id=2" class="product-card">
+                <img src="images/hotdog.jpg" alt="Hotdog">
+                <div class="product-info">
+                    <h3>Hotdog "New York"</h3>
+                    <p class="price">42.00</p>
+                    <span class="details-link">Vezi detalii & AR →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2><span>Băuturi</span></h2>
+        <div class="product-grid">
+            <a href="product.html?id=4" class="product-card">
+                <img src="images/latte.jpg" alt="Caffee Latte">
+                <div class="product-info">
+                    <h3>Caffee Latte</h3>
+                    <p class="price">12.00 RON</p>
+                    <span class="details-link">Vezi detalii & AR →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2><span>Desert</span></h2>
+        <div class="product-grid">
+            <a href="product.html?id=3" class="product-card">
+                <img src="images/donuts.jpg" alt="Donuts">
+                <div class="product-info">
+                    <h3>Donuts "Sweet Delight"</h3>
+                    <p class="price">30.00 RON</p>
+                    <span class="details-link">Vezi detalii & AR →</span>
+                </div>
+            </a>
+            <!-- More desserts -->
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 3Dine. Design inspirat de excelență.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

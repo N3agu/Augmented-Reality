@@ -18,26 +18,21 @@
                 <img src="images/logo-nobuffer.png" alt="3Dine Icon" class="logo-image">
                 <span class="logo-text">3Dine</span>
             </a>
-            <!-- Desktop Navigation Links -->
             <div class="nav-links">
-                <a href="index.html#menu">Meniu</a>
-                <a href="#">Oferte</a>
+                <a href="menu.html" class="active">Meniu</a>
+                <a href="index.html#oferte">Oferte</a>
                 <a href="cart.html" class="cart-button">Comanda 🛒<span id="cart-count">0</span></a>
             </div>
-            <!-- Hamburger Menu Button -->
             <button id="hamburger-btn" aria-label="Open Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </nav>
     </header>
 
-    <!-- Mobile Navigation Menu -->
     <div id="mobile-menu">
-        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
-        <a href="index.html#menu">Meniu</a>
-        <a href="#">Oferte</a>
+        <button id="close-menu-btn">&times;</button>
+        <a href="menu.html">Meniu</a>
+        <a href="index.html#oferte">Oferte</a>
         <a href="cart.html">Comanda</a>
     </div>
 
@@ -46,7 +41,7 @@
             <div class="hero-text">
                 <h1>Gust Pur, Exotic</h1>
                 <p>Experimentează o călătorie culinară unică. Fiecare preparat este o operă de artă, gata să fie descoperită în 3D direct la masa ta.</p>
-                <a href="#menu" class="cta-button">Explorează Meniul</a>
+                <a href="menu.html" class="cta-button">Explorează Meniul</a>
             </div>
             <div class="hero-image">
                 <img src="images/main.png" alt="Preparat principal">
@@ -57,39 +52,46 @@
              <svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q50,10 100,5" stroke="var(--primary-color)" fill="none" stroke-width="2px"/></svg>
         </div>
 
-        <section id="menu" class="menu-section">
-            <h2>Preparatele noastre <span>exclusive</span></h2>
+        <section id="oferte" class="menu-section">
+            <h2>Oferte <span>Speciale</span></h2>
             <div class="product-grid">
                 <a href="product.html?id=1" class="product-card">
-                    <img src="images/produs1.jpg" alt="Burger">
+                    <img src="images/hamburger.jpg" alt="Burger">
                     <div class="product-info">
                         <h3>Burger "Epicurean"</h3>
-                        <p class="price">58.00 RON</p>
+                        <p class="price">
+                            <span class="old-price">65.00 RON</span> 58.00 RON
+                        </p>
                         <span class="details-link">Vezi detalii & AR →</span>
                     </div>
                 </a>
                 <a href="product.html?id=2" class="product-card">
-                    <img src="images/produs2.jpg" alt="Pizza">
+                    <img src="images/hotdog.jpg" alt="Hotdog">
                     <div class="product-info">
-                        <h3>Pizza "Regina"</h3>
-                        <p class="price">65.50 RON</p>
+                        <h3>Hotdog "New York"</h3>
+                        <p class="price">
+                            <span class="old-price">50.00 RON</span> 42.00 RON
+                        </p>
                         <span class="details-link">Vezi detalii & AR →</span>
                     </div>
                 </a>
                 <a href="product.html?id=3" class="product-card">
-                    <img src="images/produs3.jpg" alt="Desert">
+                    <img src="images/donuts.jpg" alt="Donuts">
                     <div class="product-info">
-                        <h3>Lava Cake "Decadent"</h3>
-                        <p class="price">35.00 RON</p>
+                        <h3>Donuts "Sweet Delight"</h3>
+                        <p class="price">
+                            <span class="old-price">30.00 RON</span> 25.00 RON
+                        </p>
                         <span class="details-link">Vezi detalii & AR →</span>
                     </div>
                 </a>
             </div>
         </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2025 3Dine Restaurant. Design inspirat de excelență.</p>
+        <p>&copy; 2025 3Dine. Design inspirat de excelență.</p>
     </footer>
 
     <script src="script.js"></script>
